@@ -5,7 +5,7 @@ import './EventDetail.css';
 function EventDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { getEventById } = useEvents();
+  const { getEventById, deleteEvent } = useEvents();
 
   if (!id) {
     navigate('/calendar');
@@ -21,6 +21,24 @@ function EventDetail() {
 
   const handleBack = () => {
     navigate(-1);
+  };
+
+  const handleEdit = () => {
+    // TODO: 수정 페이지로 이동 (나중에 구현)
+    alert('수정 기능은 곧 추가될 예정입니다.');
+  };
+
+  const handleDelete = async () => {
+    if (!window.confirm('정말 삭제하시겠습니까?')) {
+      return;
+    }
+
+    try {
+      await deleteEvent(Number(id));
+      navigate('/calendar');
+    } catch (error) {
+      alert('삭제에 실패했습니다.');
+    }
   };
 
   // 날짜 포맷팅
@@ -65,21 +83,25 @@ function EventDetail() {
           </div>
         </div>
 
-        <div className="event-detail-section">
-          <div className="detail-label">위치</div>
-          <div className="detail-value">을지로 담장</div>
-        </div>
+        {event.location && (
+          <div className="event-detail-section">
+            <div className="detail-label">위치</div>
+            <div className="detail-value">{event.location}</div>
+          </div>
+        )}
 
-        <div className="event-detail-section">
-          <div className="detail-label">메모</div>
-          <div className="detail-value detail-memo">크루원 있어요..</div>
-        </div>
+        {event.memo && (
+          <div className="event-detail-section">
+            <div className="detail-label">메모</div>
+            <div className="detail-value detail-memo">{event.memo}</div>
+          </div>
+        )}
       </div>
 
       {/* 액션 버튼 */}
       <div className="event-actions">
-        <button className="action-btn edit-btn">수정</button>
-        <button className="action-btn delete-btn">삭제</button>
+        <button className="action-btn edit-btn" onClick={handleEdit}>수정</button>
+        <button className="action-btn delete-btn" onClick={handleDelete}>삭제</button>
       </div>
     </div>
   );

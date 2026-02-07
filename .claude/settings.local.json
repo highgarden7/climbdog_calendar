@@ -6,7 +6,11 @@
       "Bash(npm install)",
       "Bash(npm install:*)",
       "Bash(ls:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(npx @nestjs/cli generate module events)",
+      "Bash(npx @nestjs/cli generate service:*)",
+      "Bash(npx @nestjs/cli generate controller events)",
+      "Bash(npm run start:dev:*)"
     ]
   }
 }

@@ -75,7 +75,9 @@ function DayEventsList() {
                 <div className="event-time">
                   {event.startTime} - {event.endTime}
                 </div>
-                <div className="event-location">을지로 담장</div>
+                {event.location && (
+                  <div className="event-location">{event.location}</div>
+                )}
               </div>
             </div>
           ))

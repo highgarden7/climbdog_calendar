@@ -13,6 +13,8 @@ function AddEvent() {
     date: date || '',
     startTime: '09:00',
     endTime: '10:00',
+    location: '',
+    memo: '',
   });
 
   // 10분 단위 시간 옵션 생성
@@ -48,6 +50,8 @@ function AddEvent() {
       startTime: formData.startTime,
       endTime: formData.endTime,
       color: '#8B7EC8', // 기본 색상
+      location: formData.location,
+      memo: formData.memo,
     });
 
     // 일정 리스트 페이지로 이동
@@ -134,6 +138,28 @@ function AddEvent() {
               ))}
             </select>
           </div>
+        </div>
+
+        <div className="form-section">
+          <label htmlFor="location">위치</label>
+          <input
+            type="text"
+            id="location"
+            value={formData.location}
+            onChange={(e) => handleChange('location', e.target.value)}
+            placeholder="위치를 입력하세요"
+          />
+        </div>
+
+        <div className="form-section">
+          <label htmlFor="memo">메모</label>
+          <textarea
+            id="memo"
+            value={formData.memo}
+            onChange={(e) => handleChange('memo', e.target.value)}
+            placeholder="메모를 입력하세요"
+            rows={4}
+          />
         </div>
       </form>
     </div>
