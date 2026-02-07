@@ -1,0 +1,173 @@
+.day-events-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/* 헤더 */
+.day-events-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+.back-btn {
+  font-size: 24px;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.header-date {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.header-month {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-day {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+.header-weekday {
+  font-size: 16px;
+  color: #666;
+}
+
+.header-spacer {
+  width: 40px;
+}
+
+/* 일정 리스트 */
+.events-list {
+  padding: 20px;
+}
+
+.no-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.no-events p {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.add-first-event-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-first-event-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* 일정 아이템 */
+.event-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.event-item:hover {
+  background-color: #f8f9fa;
+}
+
+.event-time-indicator {
+  width: 4px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.event-content {
+  flex: 1;
+}
+
+.event-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.event-time {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.event-location {
+  font-size: 14px;
+  color: #999;
+}
+
+/* FAB 버튼 */
+.add-event-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.add-event-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+.add-event-fab:active {
+  transform: scale(0.95);
+}
+
+.add-event-fab .plus-icon {
+  color: white;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+  .add-event-fab {
+    bottom: 20px;
+    right: 20px;
+  }
+}

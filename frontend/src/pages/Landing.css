@@ -1,0 +1,66 @@
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.landing-logo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  padding: 20px;
+}
+
+.start-button {
+  width: 100%;
+  max-width: 300px;
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(245, 87, 108, 0.6);
+}
+
+.start-button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+}
+
+@media (max-width: 480px) {
+  .landing-logo {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .start-button {
+    max-width: 100%;
+    font-size: 16px;
+    padding: 16px 36px;
+  }
+}
